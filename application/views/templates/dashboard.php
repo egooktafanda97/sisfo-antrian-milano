@@ -10,7 +10,16 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="<?= base_url("assets/admin/") ?>images/favicon.png">
 	<!-- Custom Stylesheet -->
 	<link href="<?= base_url("assets/admin/") ?>css/style.css" rel="stylesheet">
-    <link href="<?= base_url("assets/admin/") ?>./plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
+	<link href="<?= base_url("assets/admin/") ?>./plugins/tables/css/datatable/dataTables.bootstrap4.min.css"
+		rel="stylesheet">
+	<!-- Include Bootstrap CSS -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"> -->
+
+	<!-- DI TAMBAHKAN -->
+	<!-- Include DataTables CSS -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap4.min.css">
+	<!-- DI TAMBAHKAN -->
 
 </head>
 
@@ -79,8 +88,29 @@
 								<input type="text" class="form-control" placeholder="Search">
 							</form>
 						</div>
+						
 					</div>
 				</div>
+				<div class="header-right">
+							<li class="icons dropdown">
+								<div class="user-img c-pointer position-relative" data-toggle="dropdown">
+									<span class="activity active"></span>
+									<img src="<?= base_url("assets/admin/") ?>images/profile_default.png" height="40" width="40" alt="">
+								</div>
+								<div class="drop-down dropdown-profile   dropdown-menu">
+									<div class="dropdown-content-body">
+										<ul>
+											<li>
+												<a href="app-profile.html"><i class="icon-user"></i>
+													<span>Profile</span></a>
+											</li>
+											<li><a href="<?= base_url('login/logout') ?>"><i class="icon-key"></i>
+													<span>Logout</span></a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</div>
 			</div>
 		</div>
 		<!--**********************************
@@ -91,7 +121,7 @@
             Sidebar start
         ***********************************-->
 
-        <?php $this->load->view('templates/navbar'); ?>
+		<?php $this->load->view('templates/navbar'); ?>
 
 		<!--**********************************
             Sidebar end
@@ -105,15 +135,25 @@
 			<div class="row page-titles mx-0">
 				<div class="col p-md-0">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-						<li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+						<?php
+            $segments = $this->uri->segment_array();
+
+            // Tambahkan breadcrumb untuk setiap segmen URI
+            $url = base_url();
+            foreach ($segments as $segment) {
+                $url .= $segment . '/';
+                $segment_name = ucfirst(str_replace(['_', '-'], ' ', $segment));
+                echo '<li class="breadcrumb-item"><a href="' . $url . '">' . $segment_name . '</a></li>';
+            }
+            ?>
 					</ol>
 				</div>
 			</div>
+
 			<!-- row -->
 
 			<div class="container-fluid">
-			<?php $this->load->view('/Page/' . $page); ?>
+				<?php $this->load->view('/Page/' . $page); ?>
 
 			</div>
 			<!-- #/ container -->
@@ -135,10 +175,30 @@
 	<script src="<?= base_url("assets/admin/") ?>js/gleek.js"></script>
 	<script src="<?= base_url("assets/admin/") ?>js/styleSwitcher.js"></script>
 
-	
-    <script src="<?= base_url("assets/admin/") ?>./plugins/tables/js/jquery.dataTables.min.js"></script>
-    <script src="<?= base_url("assets/admin/") ?>./plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
-    <script src="<?= base_url("assets/admin/") ?>./plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
+
+	<!-- <script src="<?= base_url("assets/admin/") ?>./plugins/tables/js/jquery.dataTables.min.js"></script> -->
+	<!-- <script src="<?= base_url("assets/admin/") ?>./plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script> -->
+	<script src="<?= base_url("assets/admin/") ?>./plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
+
+
+	<!-- DI TAMBAHKAN -->
+
+	<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+	<!-- Include DataTables scripts -->
+	<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap4.min.js"></script>
+
+	<!-- Include DataTables Responsive extension scripts -->
+	<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+	<script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap4.min.js"></script>
+	<script>
+		new DataTable('#example', {
+			responsive: true
+		});
+
+	</script>
+	<!-- DI TAMBAHKAN -->
 
 </body>
 
