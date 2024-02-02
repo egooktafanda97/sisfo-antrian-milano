@@ -1,26 +1,18 @@
 <?php
 
-use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class Jadwal_model extends Eloquent
+use Illuminate\Database\Eloquent\Model;
+
+class Jadwal_model extends Model
 {
-
-    protected $table = 'pengaturan_jadwal';
-    protected $primaryKey = 'id';
-    public $timestamps = true;
+    protected $table = 'jadwal_dokter';
 
     protected $fillable = [
-        'hari',
-        'buka',
-        'tutup',
-        'tanggal',
-        'status',
+        'dokter_id',
+        'bagian',
+        'hari_pertama',
+        'hari_terakhir',
+        'jam_pertama',
+        'jam_terakhir',
     ];
-
-    protected $casts = [
-        'buka' => 'date',
-        'tutup' => 'date',
-    ];
-
-    // Jika diperlukan, Anda juga dapat menambahkan relasi atau metode lain di sini.
 }

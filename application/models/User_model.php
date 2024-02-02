@@ -1,10 +1,14 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
 
-use Illuminate\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
-class User_model extends Eloquent
+class User_model extends Model
 {
     protected $table = 'users';
-    public $timestamps = false;
+    protected $fillable = [
+        'nama',
+        'username',
+        'password',
+        'remember_token',
+    ];
 }
