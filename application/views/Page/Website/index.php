@@ -28,24 +28,8 @@
                 <div class="row g-2">
                     <div class="col-md-10">
                         <div class="row g-2">
-                            <div class="col-md-4">
-                                <input type="text" class="form-control border-0 py-3" placeholder="Search Keyword">
-                            </div>
-                            <div class="col-md-4">
-                                <select class="form-select border-0 py-3">
-                                    <option selected>Property Type</option>
-                                    <option value="1">Property Type 1</option>
-                                    <option value="2">Property Type 2</option>
-                                    <option value="3">Property Type 3</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <select class="form-select border-0 py-3">
-                                    <option selected>Location</option>
-                                    <option value="1">Location 1</option>
-                                    <option value="2">Location 2</option>
-                                    <option value="3">Location 3</option>
-                                </select>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control border-0 py-3" placeholder="Cari Dokter">
                             </div>
                         </div>
                     </div>
@@ -62,98 +46,116 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">Property Types</h1>
-                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+                    <h1 class="mb-3">ANTRIAN</h1>
+                
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                         <a class="cat-item d-block bg-light text-center rounded p-3" href="">
                             <div class="rounded p-4">
-                                <div class="icon mb-3">
-                                    <img class="img-fluid" src="<?= base_url("assets/web/") ?>img/icon-apartment.png" alt="Icon">
+                                <div class="mb-3">
+                                    <h1>A001</h1>
                                 </div>
-                                <h6>Apartment</h6>
-                                <span>123 Properties</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <div class="icon mb-3">
-                                    <img class="img-fluid" src="<?= base_url("assets/web/") ?>img/icon-villa.png" alt="Icon">
-                                </div>
-                                <h6>Villa</h6>
-                                <span>123 Properties</span>
+                                <h6>Nama Dokter</h6>
+                                <span>Layanan</span><br>
+                                <span>Senin s/d Jumat</span><br>
+                                <span>10:00:00 s/d 20:20:00</span>
                             </div>
                         </a>
                     </div>
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                         <a class="cat-item d-block bg-light text-center rounded p-3" href="">
                             <div class="rounded p-4">
-                                <div class="icon mb-3">
-                                    <img class="img-fluid" src="<?= base_url("assets/web/") ?>img/icon-house.png" alt="Icon">
+                                <div class="mb-3">
+                                    <h1>A005</h1>
                                 </div>
-                                <h6>Home</h6>
-                                <span>123 Properties</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <div class="icon mb-3">
-                                    <img class="img-fluid" src="<?= base_url("assets/web/") ?>img/icon-housing.png" alt="Icon">
-                                </div>
-                                <h6>Office</h6>
-                                <span>123 Properties</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <div class="icon mb-3">
-                                    <img class="img-fluid" src="<?= base_url("assets/web/") ?>img/icon-building.png" alt="Icon">
-                                </div>
-                                <h6>Building</h6>
-                                <span>123 Properties</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <div class="icon mb-3">
-                                    <img class="img-fluid" src="<?= base_url("assets/web/") ?>img/icon-neighborhood.png" alt="Icon">
-                                </div>
-                                <h6>Townhouse</h6>
-                                <span>123 Properties</span>
+                                <h6>Nama Dokter</h6>
+                                <span>Layanan</span><br>
+                                <span>Senin s/d Jumat</span><br>
+                                <span>10:00:00 s/d 20:20:00</span>
                             </div>
                         </a>
                     </div>
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                         <a class="cat-item d-block bg-light text-center rounded p-3" href="">
                             <div class="rounded p-4">
-                                <div class="icon mb-3">
-                                    <img class="img-fluid" src="<?= base_url("assets/web/") ?>img/icon-condominium.png" alt="Icon">
+                                <div class="mb-3">
+                                    <h1>A001</h1>
                                 </div>
-                                <h6>Shop</h6>
-                                <span>123 Properties</span>
+                                <h6>Nama Dokter</h6>
+                                <span>Layanan</span><br>
+                                <span>Senin s/d Jumat</span><br>
+                                <span>10:00:00 s/d 20:20:00</span>
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                         <a class="cat-item d-block bg-light text-center rounded p-3" href="">
                             <div class="rounded p-4">
-                                <div class="icon mb-3">
-                                    <img class="img-fluid" src="<?= base_url("assets/web/") ?>img/icon-luxury.png" alt="Icon">
+                                <div class="mb-3">
+                                    <h1>A002</h1>
                                 </div>
-                                <h6>Garage</h6>
-                                <span>123 Properties</span>
+                                <h6>Nama Dokter</h6>
+                                <span>Layanan</span><br>
+                                <span>Senin s/d Jumat</span><br>
+                                <span>10:00:00 s/d 20:20:00</span>
                             </div>
                         </a>
                     </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                            <div class="rounded p-4">
+                                <div class="mb-3">
+                                    <h1>A008</h1>
+                                </div>
+                                <h6>Nama Dokter</h6>
+                                <span>Layanan</span><br>
+                                <span>Senin s/d Jumat</span><br>
+                                <span>10:00:00 s/d 20:20:00</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                            <div class="rounded p-4">
+                                <div class="mb-3">
+                                    <h1>A007</h1>
+                                </div>
+                                <h6>Nama Dokter</h6>
+                                <span>Layanan</span><br>
+                                <span>Senin s/d Jumat</span><br>
+                                <span>10:00:00 s/d 20:20:00</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                            <div class="rounded p-4">
+                                <div class="mb-3">
+                                    <h1>A003</h1>
+                                </div>
+                                <h6>Nama Dokter</h6>
+                                <span>Layanan</span><br>
+                                <span>Senin s/d Jumat</span><br>
+                                <span>10:00:00 s/d 20:20:00</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                            <div class="rounded p-4">
+                                <div class="mb-3">
+                                    <h1>A004</h1>
+                                </div>
+                                <h6>Nama Dokter</h6>
+                                <span>Layanan</span><br>
+                                <span>Senin s/d Jumat</span><br>
+                                <span>10:00:00 s/d 20:20:00</span>
+                            </div>
+                        </a>
+                    </div>
+                    
                 </div>
             </div>
         </div>
