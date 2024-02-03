@@ -6,7 +6,6 @@ class Login extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        // Load library, model, atau helper yang dibutuhkan
     }
 
     public function index()
@@ -20,19 +19,19 @@ class Login extends CI_Controller
         // Ambil data input dari form
         $username = $this->input->post('username');
         $password = $this->input->post('password');
-    
+
         // Proses validasi atau otentikasi sesuai dengan data di database
         $this->db->where('username', $username);
         $user = $this->db->get('tb_user')->row();
-    
+
         if ($user && password_verify($password, $user->password)) {
             // Login sukses, set session atau tindakan lain sesuai kebutuhan
             $data = array(
-                'user_id' => $user->user_id,
+                'user_id' => $user->id_user,
                 'username' => $user->username,
-                'role' => $user->role // 'dokter' atau 'admin'
+                'role' => $user->akses // 'dokter' atau 'admin'
             );
-    
+
             $this->session->set_userdata($data);
             redirect('home'); // Redirect ke home setelah login sukses
         } else {
@@ -41,14 +40,11 @@ class Login extends CI_Controller
         }
     }
     public function logout()
-{
-    // Hapus semua data sesi
-    $this->session->sess_destroy();
+    {
+        // Hapus semua data sesi
+        $this->session->sess_destroy();
 
-    // Redirect ke halaman login atau halaman lain yang diinginkan
-    redirect('login');
-}
-
-    
-    
+        // Redirect ke halaman login atau halaman lain yang diinginkan
+        redirect('login');
+    }
 }

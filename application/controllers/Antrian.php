@@ -29,4 +29,27 @@ class Antrian extends CI_Controller
 
         $this->load->view('Router/route', $data);
     }
+
+    public function confirmasi_kedatangan($id)
+    {
+        $this->db->where("id_antrian", $id);
+        $antrianToUpdate = $this->db->get("tb_antrian")->row();
+
+        // Periksa apakah data ditemukan
+        if ($antrianToUpdate) {
+            // Lakukan update
+            $this->db->where("id_antrian", $id);
+            $this->db->update("tb_antrian", ["confirmasi_kedatangan" => true]);
+
+            // Lakukan sesuatu setelah update
+            $updates = $this->db->affected_rows();
+            if ($updates > 0) {
+                redirect("Konsultasi");
+            } else {
+                redirect("Konsultasi");
+            }
+        } else {
+            redirect("Konsultasi");
+        }
+    }
 }

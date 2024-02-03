@@ -10,6 +10,8 @@ class Dokter extends CI_Controller
         parent::__construct();
         $this->load->database();
         $this->load->library('session');
+        if (!auth()->username)
+            redirect("login");
     }
     public function index()
     {
@@ -63,24 +65,6 @@ class Dokter extends CI_Controller
 
     public function tambahDokter()
     {
-        // Data untuk tb_dokter
-        $data_dokter = array(
-            'nama_dokter' => $this->input->post('nama_dokter'),
-            'tempat_lahir' => $this->input->post('tempat_lahir'),
-            'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-            'alamat' => $this->input->post('alamat'),
-            'jenis_kelamin' => $this->input->post('jenis_kelamin'),
-            'status' => $this->input->post('status'),
-            'pendidikan_akhir' => $this->input->post('pendidikan_akhir'),
-            'id_layanan' => $this->input->post('id_layanan')
-        );
-
-        // Menambah data ke tb_dokter
-        $this->db->insert('tb_dokter', $data_dokter);
-
-        // Mendapatkan ID dokter yang baru ditambahkan
-        $id_dokter = $this->db->insert_id();
-
         // Data untuk tb_user
         $data_user = array(
             'username' => $this->input->post('username'),
@@ -91,6 +75,30 @@ class Dokter extends CI_Controller
 
         // Menambah data ke tb_user
         $this->db->insert('tb_user', $data_user);
+
+        $users = $this->db->get_where("tb_user", ["username" => $this->input->post('username')])->row_array();
+
+        // Data untuk tb_dokter
+        $data_dokter = array(
+            'nama_dokter' => $this->input->post('nama_dokter'),
+            'tempat_lahir' => $this->input->post('tempat_lahir'),
+            'tanggal_lahir' => $this->input->post('tanggal_lahir'),
+            'alamat' => $this->input->post('alamat'),
+            'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+            'status' => $this->input->post('status'),
+            'pendidikan_akhir' => $this->input->post('pendidikan_akhir'),
+            'id_layanan' => $this->input->post('id_layanan'),
+            "user_id" => $users['id_user']
+        );
+
+        // Menambah data ke tb_dokter
+        $this->db->insert('tb_dokter', $data_dokter);
+
+        // Mendapatkan ID dokter yang baru ditambahkan
+        $id_dokter = $this->db->insert_id();
+
+
+
 
         if ($this->db->affected_rows() > 0) {
             $this->session->set_flashdata('success', 'Data dokter berhasil ditambahkan.');
