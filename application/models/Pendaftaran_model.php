@@ -4,19 +4,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pendaftaran_model extends Model
 {
-    protected $table = 'pasien';
+    protected $table = 'tb_daftar';
 
-    protected $fillable = [
-        'antrian_id',
-        'nama',
-        'alamat',
-        'jenis_kelamin',
-        'umur',
-        'berat_badan',
-        'tanggal_besuk',
-        'penyakit',
-        'dokter_id',
-    ];
+    // protected $fillable = [
+    //     'antrian_id',
+    //     'nama',
+    //     'alamat',
+    //     'jenis_kelamin',
+    //     'umur',
+    //     'berat_badan',
+    //     'tanggal_besuk',
+    //     'penyakit',
+    //     'dokter_id',
+    // ];
 
     // Defaultnya, Eloquent mengasumsikan bahwa kolom id adalah primary key dan auto-increment
     // Jika kolom primary key atau nama tabel berbeda, Anda dapat menyesuaikannya sebagai berikut:

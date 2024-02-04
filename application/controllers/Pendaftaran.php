@@ -59,6 +59,13 @@ class Pendaftaran extends CI_Controller
         $this->db->where('id_daftar', $id_daftar);
         $this->db->update('tb_daftar', array('id_antrian' => $id_antrian));
 
+        $getSetting = $this->db->get_where("settings", ["setting_key" => "session_wa"])->row();
+
+        $this->sendText([
+            "session" => $getSetting->setting_value,
+            "wa" => $pendaftaran->nowa,
+            "msg" => "Pendaftaran anda di rs milano telah di setujui admin"
+        ]);
         // Redirect kembali ke halaman pendaftaran
         redirect('pendaftaran');
     }
@@ -79,5 +86,14 @@ class Pendaftaran extends CI_Controller
         $kode_antrian = $huruf_awal . str_pad($urutan, 3, '0', STR_PAD_LEFT);
 
         return $kode_antrian;
+    }
+
+    public function sendText($props = [])
+    {
+        return CurlPost('http://localhost:5040/api/send-text', [
+            "session" => $props['session'],
+            "to" => $props['wa'],
+            "text" => $props['msg'],
+        ]);
     }
 }

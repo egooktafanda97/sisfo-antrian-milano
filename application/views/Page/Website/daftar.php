@@ -5,7 +5,7 @@
 				<div class="card">
 					<div class="card-body">
 						<!-- Daftar Form -->
-						<form action="<?= base_url('website/daftar/simpanDaftar') ?>" method="post">
+						<form action="<?= base_url('Daftar/simpanDaftar') ?>" method="post">
 							<div class="form-group mb-3">
 								<div class="row">
 									<div class="col-6">
@@ -61,9 +61,9 @@
 										<label for="id_dokter">Dokter:</label>
 										<select class="form-control" name="id_dokter" required>
 											<option value="">--- PILIH DOKTER ---</option>
-											<?php foreach ($dokter_data as $dokter): ?>
-											<option value="<?= $dokter->id_dokter ?>"><?= $dokter->nama_dokter ?>
-											</option>
+											<?php foreach ($dokter_data as $dokter) : ?>
+												<option value="<?= $dokter->id_dokter ?>"><?= $dokter->nama_dokter ?>
+												</option>
 											<?php endforeach; ?>
 										</select>
 									</div>
@@ -71,9 +71,9 @@
 										<label for="id_jamkes">Jamkes:</label>
 										<select class="form-control" name="id_jamkes">
 											<option value="">--- PILIH JAMKES ---</option>
-											<?php foreach ($jamkes_data as $jamkes): ?>
-											<option value="<?= $jamkes->id_jamkes ?>"><?= $jamkes->singkatan ?>
-												(<?= $jamkes->nama_jamkes ?>)</option>
+											<?php foreach ($jamkes_data as $jamkes) : ?>
+												<option value="<?= $jamkes->id_jamkes ?>"><?= $jamkes->singkatan ?>
+													(<?= $jamkes->nama_jamkes ?>)</option>
 											<?php endforeach; ?>
 										</select>
 									</div>

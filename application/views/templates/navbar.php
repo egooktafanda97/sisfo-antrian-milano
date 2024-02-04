@@ -9,15 +9,16 @@
 			</li>
 			<?php if (auth()->akses == 'dokter') : ?>
 				<li>
-					<a href="<?= base_url('layanan'); ?>" aria-expanded="false">
+					<a href="<?= base_url('Konsultasi'); ?>" aria-expanded="false">
 						<i class="icon-note menu-icon"></i><span class="nav-text">Antrian Pasien</span>
 					</a>
 				</li>
 				<li>
-					<a href="<?= base_url('layanan'); ?>" aria-expanded="false">
+					<a href="<?= base_url('laporan'); ?>" aria-expanded="false">
 						<i class="icon-note menu-icon"></i><span class="nav-text">Laporan</span>
 					</a>
 				</li>
+
 			<?php endif ?>
 			<?php if (auth()->akses == 'admin') : ?>
 
@@ -50,6 +51,11 @@
 				<li>
 					<a href="<?= base_url('pendaftaran'); ?>" aria-expanded="false">
 						<i class="icon-user menu-icon"></i><span class="nav-text">Pendaftaran</span>
+					</a>
+				</li>
+				<li>
+					<a href="<?= base_url('laporan/antrian'); ?>" aria-expanded="false">
+						<i class="icon-note menu-icon"></i><span class="nav-text">Laporan</span>
 					</a>
 				</li>
 			<?php endif ?>

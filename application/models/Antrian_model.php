@@ -3,15 +3,15 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Antrian_models extends Model
+class Antrian_model extends Model
 {
-    protected $table = 'antrian';
+    protected $table = 'tb_antrian';
 
-    protected $fillable = [
-        'tanggal',
-        'antrian',
-        'status',
-    ];
+    // protected $fillable = [
+    //     'tanggal',
+    //     'antrian',
+    //     'status',
+    // ];
 
     // Defaultnya, Eloquent mengasumsikan bahwa kolom id adalah primary key dan auto-increment
     // Jika kolom primary key atau nama tabel berbeda, Anda dapat menyesuaikannya sebagai berikut:

@@ -460,6 +460,7 @@ function sendWa($no, $msg)
 }
 
 
+
 function CurlPost($url, $data)
 {
 	$curl = curl_init($url);
@@ -470,10 +471,14 @@ function CurlPost($url, $data)
 		"Content-Type: application/json",
 	);
 	curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-	curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+	curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
 	//for debug only!
 	curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
 	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+	if (curl_errno($curl)) {
+		echo 'Curl error: ' . curl_error($curl);
+	}
+
 	$resp = curl_exec($curl);
 	curl_close($curl);
 	return $resp;

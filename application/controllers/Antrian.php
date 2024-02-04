@@ -19,6 +19,8 @@ class Antrian extends CI_Controller
         $this->db->from('tb_antrian');
         $this->db->join('tb_daftar', 'tb_antrian.id_antrian = tb_daftar.id_antrian', 'left');
         $this->db->join('tb_dokter', 'tb_daftar.id_dokter = tb_dokter.id_dokter', 'left');
+        $this->db->where("tb_daftar.tanggal_besuk", $_GET['tanggal'] ?? date("Y-m-d"));
+        $this->db->order_by("tb_antrian.antrian");
         $data['antrian_data'] = $this->db->get()->result();
 
         $data = [
@@ -39,17 +41,17 @@ class Antrian extends CI_Controller
         if ($antrianToUpdate) {
             // Lakukan update
             $this->db->where("id_antrian", $id);
-            $this->db->update("tb_antrian", ["confirmasi_kedatangan" => true]);
+            $this->db->update("tb_antrian", ["confirmasi_kedatangan" => 'true']);
 
             // Lakukan sesuatu setelah update
             $updates = $this->db->affected_rows();
             if ($updates > 0) {
-                redirect("Konsultasi");
+                redirect("Antrian");
             } else {
-                redirect("Konsultasi");
+                redirect("Antrian");
             }
         } else {
-            redirect("Konsultasi");
+            redirect("Antrian");
         }
     }
 }

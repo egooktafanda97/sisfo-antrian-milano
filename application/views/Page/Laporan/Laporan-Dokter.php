@@ -2,7 +2,16 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Daftar Pendaftaran</h4>
+                <div style="display:flex; justify-content: space-between;">
+                    <h4 class="card-title">Daftar Pendaftaran</h4>
+                    <div style="display: flex;">
+                        <form action="" class="mr-2 " style="display: flex;">
+                            <input type="date" class="form-control form-control-sm" style="height: 5px;" name="tanggal">
+                            <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                        </form>
+                        <a style="display: flex; justify-content: center; align-items: center;" href="<?= base_url("laporan/print?tanggal=" . ($_GET['tanggal'] ?? '')) ?>" target="_blank" class="btn btn-info btn-sm"><i class="fa fa-print"></i> Print</a>
+                    </div>
+                </div>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered" id="example">
                         <thead>
@@ -13,11 +22,10 @@
                                 <th>Nama Dokter</th>
                                 <th>Tanggal</th>
                                 <th>Status</th>
-                                <th>#</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($antrian_data as $index => $antrian) : ?>
+                            <?php foreach ($antrian as $index => $antrian) : ?>
                                 <tr>
                                     <td><?= $index + 1 ?></td>
                                     <td><?= $antrian->antrian ?></td>
@@ -27,21 +35,9 @@
                                     <td>
                                         <?= $antrian->status_konsul ?? "-" ?>
                                     </td>
-                                    <td>
-                                        <a href="<?= base_url("Antrian/confirmasi_kedatangan/" . $antrian->id_antrian) ?>" class="btn btn-primary btn-sm <?= !empty($antrian->confirmasi_kedatangan) ? 'disabled' : '' ?>">Datang</a>
-                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>No</th>
-                                <th>Nama Pasien</th>
-                                <th>Nama Dokter</th>
-                                <th>Tanggal</th>
-                                <th>Status</th>
-                            </tr>
-                        </tfoot>
                     </table>
                 </div>
             </div>

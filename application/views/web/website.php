@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -45,7 +45,7 @@
         <!-- Navbar Start -->
         <div class="container-fluid nav-bar bg-transparent">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
-                <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
+                <a href="<?= base_url("/") ?>" class="navbar-brand d-flex align-items-center text-center">
                     <div class="icon p-2 me-2">
                         <img class="img-fluid" src="<?= base_url("assets/web/") ?>img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
                     </div>
@@ -57,9 +57,9 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
                         <a href="<?= base_url('website'); ?>" class="nav-item nav-link active">Home</a>
-                        <a href="<?= base_url('website/about'); ?>" class="nav-item nav-link">About</a>
-                     
-                        <a href="<?= base_url('website/contact'); ?>" class="nav-item nav-link">Contact</a>
+                        <a href="<?= base_url('about'); ?>" class="nav-item nav-link">About</a>
+
+                        <a href="<?= base_url('contact'); ?>" class="nav-item nav-link">Contact</a>
                     </div>
                 </div>
             </nav>
@@ -67,12 +67,12 @@
         <!-- Navbar End -->
 
 
-      <!-- CONTENT -->
-      <?php $this->load->view('/Page/' . $page); ?>
-      <!-- CONTENT -->
-        
+        <!-- CONTENT -->
+        <?php $this->load->view('/Page/' . $page); ?>
+        <!-- CONTENT -->
 
-  
+
+
 
 
         <!-- Back to Top -->
